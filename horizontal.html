@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+<title>Horizontal Scrolling Parallax Demo</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+  var strip = $('#strip');
+  var strip_width = strip.width();
+
+  var gameboard_bg2 = $('#gameboard-bg2');
+  var gameboard_bg3 = $('#gameboard-bg3');
+  var gameboard_bg4 = $('#gameboard-bg4');
+  var gameboard_bg6 = $('#gameboard-bg6');
+
+  $('#gameboard').scroll(function(e) {
+
+    $(gameboard_bg2).css('left', (($(this).scrollLeft() * -0.25) + 400) + 'px');
+    $(gameboard_bg3).css('left', (($(this).scrollLeft() * -0.5) + 800) + 'px');
+    $(gameboard_bg4).css('left', (($(this).scrollLeft() * -0.75) + 600) + 'px');
+    $(gameboard_bg6).css('left', (($(this).scrollLeft() * -1) + 2000) + 'px');
+
+  });
+});
+</script>
+
+<style type="text/css">
+#gameboard {margin:20px auto; border:1px solid red; width:800px; height:400px; overflow:auto; position:relative;}
+
+.strip {background-position:top left; background-repeat:no-repeat;}
+#strip {border:1px solid blue; width:2000px; z-index:1000px;}
+
+.bg {background-repeat:no-repeat; background-image:url(img/puppy-kittens.jpg); width:134px; height:100px; position:absolute; z-index:-1000; border:1px solid #999; }
+#gameboard-bg1 { top:100px;}
+#gameboard-bg2 { top:140px; left:400px; }
+#gameboard-bg3 { top:180px; left:800px;}
+#gameboard-bg4 { top:220px; left:600px; }
+#gameboard-bg5 { top:250px; left:1500px; }
+#gameboard-bg6 { top:280px; left:2000px; }
+
+
+.card {float:left; width:50px; margin:20px; height:100px;}
+.brown {background-color:#A52A2A;}
+.blue {background-color:#00F;}
+.pink {background-color:#FF00FF;}
+.orange {background-color:#FFA500;}
+.red {background-color:#FF0000;}
+.yellow {background-color:#FFFF00;}
+.green {background-color:#008000;}
+.purple {background-color:#800080;}
+
+#wrapper{width:960px; border:1px solid #000; margin:20px auto;}
+</style>
+
+</head>
+<body class="home">
+<header>
+</header>
+
+<div id="wrapper">
+
+  <h1>Horizontal Scrolling Parallax Demo</h1>
+
+  <div id="gameboard" >
+    <div id="gameboard-bg1" class="bg"></div>
+    <div id="gameboard-bg2" class="bg"></div>
+    <div id="gameboard-bg3" class="bg"></div>
+    <div id="gameboard-bg4" class="bg"></div>
+    <div id="gameboard-bg5" class="bg"></div>
+    <div id="gameboard-bg6" class="bg"></div>
+
+    <div id="strip" >
+      <div class="card brown">brown</div>
+      <div class="card brown">brown</div>
+
+      <div class="card blue">blue</div>
+      <div class="card blue">blue</div>
+      <div class="card blue">blue</div>
+
+      <div class="card pink">pink</div>
+      <div class="card pink">pink</div>
+      <div class="card pink">pink</div>
+
+      <div class="card orange">orange</div>
+      <div class="card orange">orange</div>
+      <div class="card orange">orange</div>
+
+      <div class="card red">red</div>
+      <div class="card red">red</div>
+      <div class="card red">red</div>
+
+      <div class="card yellow">yellow</div>
+      <div class="card yellow">yellow</div>
+      <div class="card yellow">yellow</div>
+
+      <div class="card green">green</div>
+      <div class="card green">green</div>
+      <div class="card green">green</div>
+
+      <div class="card purple">purple</div>
+      <div class="card purple">purple</div>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
